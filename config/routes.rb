@@ -3,7 +3,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/first_product", controller: "products", action: "first_product"
 
-  get "all_products", controller: "products", action: "all_products"
+    # get "/all_products", controller: "products", action: "all_products"
+  # becomes
+  get "/all_products" => "products#all_products"
+
+
+  # get "/first_product", controller: "products", action: "first_product"
+  # becomes more effective when adding a variable to the url
+  get "/one_product/:product_id" => "products#one_product"
+  # the :id can be anything, but it pairs up with ProductsController, and it needs to match
+
+
+
+
 end
