@@ -1,0 +1,28 @@
+### Product index
+GET http://localhost:3000/products.json
+
+### Product create
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "test_name",
+  "price": "test_price",
+  "image_url": "test_image_url",
+  "description": "test_description"
+}
+
+
+### Product show
+GET http://localhost:3000/products/1.json
+
+### Product update
+PATCH http://localhost:3000/products/5.json
+Content-Type: application/json
+
+{
+  "name": "shoebox"
+}
+
+### Product destroy
+DELETE http://localhost:3000/products/5
