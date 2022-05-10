@@ -1,34 +1,43 @@
 class ProductsController < ApplicationController
 
   def index
-    products = Product.all
-    render json: products.as_json
+    @products = Product.all
+    render template: "products/index"
+
   end
 
   def create
-    product = Product.new(
-      title: params["title"],
+    @product = Product.new(
+      name: params["name"],
       price: params["price"],
       image_url: params["image_url"],
       description: params["description"]
     )
-    product.save
-    render json: product.as_json
+    if @product.save
+      render template: "products/show"
+    else
+      render json: { errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
+    
   end
 
   def show
-    product = Product.find_by(id: params["id"])
-    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
+    @product = Product.find_by(id: params["id"])
+    render template: "products/show"
   end
 
   def update
-    product = Product.find_by(id: params["id"])
-    product.title = params["title"] || product.title
-    product.price = params["price"] || product.price
-    product.image_url = params["image_url"] || product.image_url
-    product.description = params["description"] || product.description
-    product.save
-    render json: product.as_json
+    @product = Product.find_by(id: params["id"])
+    @product.name = params["name"] || @product.name
+    @product.price = params["price"] || @product.price
+    @product.image_url = params["image_url"] || @product.image_url
+    @product.description = params["description"] || @product.description
+
+    if @product.save
+      render template: "products/show"
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
