@@ -20,4 +20,19 @@ Rails.application.routes.draw do
 
   delete "/products/:id" => "products#destroy"
 
+
+  get "/suppliers" => "suppliers#index"
+
+  post "/suppliers" => "suppliers#create"
+
+
+  # get "/first_product", controller: "suppliers", action: "first_product"
+  # becomes more effective when adding a variable to the url
+  get "/suppliers/:id" => "suppliers#show"
+  # the :id can be anything, but it pairs up with suppliersController, and it needs to match
+
+  patch "/suppliers/:id" => "suppliers#update"
+
+  delete "/suppliers/:id" => "suppliers#destroy"
+
 end

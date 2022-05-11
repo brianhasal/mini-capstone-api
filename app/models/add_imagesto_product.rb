@@ -1,0 +1,2 @@
+class AddImagestoProduct < ApplicationRecord
+end
