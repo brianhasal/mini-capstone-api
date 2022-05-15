@@ -1,0 +1,18 @@
+Create a route for orders to create, index, show & controller
+
+
+1. a user can submit a quantity to order, and the order will print that number.
+
+2. a take quanity and multiply by price, print it 
+
+3. this is sub-total
+
+4. take sub-total and multiply by tax, print tax
+
+5. this is total
+
+6. order returns all info to user
+
+
+
+

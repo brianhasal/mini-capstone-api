@@ -8,7 +8,16 @@ Rails.application.routes.draw do
   # becomes
   post "/users" => "users#create"
 
+
+
+
+
   post "/sessions" => "sessions#create"
+
+  get "/orders" => "orders#index"
+  post "/orders" => "orders#create"
+  get "/orders/:id" => "orders#show"
+
 
   get "/products" => "products#index"
   post "/products" => "products#create"
@@ -20,6 +29,9 @@ Rails.application.routes.draw do
   delete "/products/:id" => "products#destroy"
 
 
+
+
+  
   get "/suppliers" => "suppliers#index"
   post "/suppliers" => "suppliers#create"
   # get "/first_product", controller: "suppliers", action: "first_product"
