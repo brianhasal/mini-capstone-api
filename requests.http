@@ -1,10 +1,14 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4MzE0MDl9.XMgFjB8ky0pMSxFRZUgrv2Ca9wf2gILAEkQYCpA5o-o
+
+
+
 ### Users create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Second Name",
-  "email": "second@test.com",
+  "name": "Admin Name",
+  "email": "admin@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -14,22 +18,24 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "second@test.com",
+  "email": "admin@test.com",
   "password": "password"
 }
 
-# first = 
+# admin = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4MzE0MDl9.XMgFjB8ky0pMSxFRZUgrv2Ca9wf2gILAEkQYCpA5o-o
 
-# second = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTIwMjl9.mtJoaJ3-Rhq3ODwiXAipwUZfAl-BS1QcGJKF-uCNMjE
+# first = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4Mjk0ODh9.utzMkbRZC4tcfEPLKuFqB4F-Vdvva3hUYrzn5Lf-3DM
+
+# second = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI4Mjk3NDV9.i2pC8DzudclqZW8u6YFKxesXD4y4y6zpl99wI84AlPo
 
 ### Orders index
 GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTIwMjl9.mtJoaJ3-Rhq3ODwiXAipwUZfAl-BS1QcGJKF-uCNMjE
+Authorization: Bearer {{jwt}}
 
 
 ### Orders create
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTIwMjl9.mtJoaJ3-Rhq3ODwiXAipwUZfAl-BS1QcGJKF-uCNMjE
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -38,8 +44,8 @@ Content-Type: application/json
 }
 
 ### Orders show
-GET http://localhost:3000/orders/3.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI3MTIwMjl9.mtJoaJ3-Rhq3ODwiXAipwUZfAl-BS1QcGJKF-uCNMjE
+GET http://localhost:3000/orders/13.json
+Authorization: Bearer {{jwt}}
 
 
 ### Product index
@@ -47,11 +53,11 @@ GET http://localhost:3000/products.json
 
 ### Product create
 POST http://localhost:3000/products.json
-Authorization: Bearer PUT IN JWT BEFORE
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "product_test_name",
+  "name": "product_test_name4",
   "price": 11,
   "description": "product_test_description",
   "supplier_id": 1
@@ -63,16 +69,17 @@ GET http://localhost:3000/products/1.json
 
 ### Product update
 PATCH http://localhost:3000/products/2.json
-Authorization: Bearer PUT IN JWT BEFORE
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "shoebox!",
-  "price": 42
+  "name": "Grogu!",
+  "price": 21
 }
 
 ### Product destroy
 DELETE http://localhost:3000/products/2
+Authorization: Bearer {{jwt}}
 
 
 ### Supplier index
