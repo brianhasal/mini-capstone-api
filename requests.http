@@ -73,7 +73,7 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "Grogu!",
+  "name": "Star Wars The Child Talking Plush Toy with Character Sounds and Accessories, The Mandalorian Toy",
   "price": 21
 }
 
