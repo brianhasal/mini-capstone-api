@@ -22,11 +22,11 @@ Content-Type: application/json
   "password": "password"
 }
 
-# admin = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4MzE0MDl9.XMgFjB8ky0pMSxFRZUgrv2Ca9wf2gILAEkQYCpA5o-o
+# admin = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTMwMDQ2MDN9.T4QpIuC4T3rFFGvTr0XUR_TdqcrtVwOQYtNXRX0FKEc
 
-# first = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4Mjk0ODh9.utzMkbRZC4tcfEPLKuFqB4F-Vdvva3hUYrzn5Lf-3DM
+# first = 
 
-# second = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NTI4Mjk3NDV9.i2pC8DzudclqZW8u6YFKxesXD4y4y6zpl99wI84AlPo
+# second = 
 
 ### Orders index
 GET http://localhost:3000/orders.json
@@ -84,3 +84,15 @@ Authorization: Bearer {{jwt}}
 
 ### Supplier index
 GET http://localhost:3000/suppliers.json
+
+
+### CartedProduct create
+POST http://localhost:3000/carted_products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTMwMDQ2MDN9.T4QpIuC4T3rFFGvTr0XUR_TdqcrtVwOQYtNXRX0FKEc
+
+{
+  "product_id": 3,
+  "quantity": 3,
+  "status": "purchased"
+}
