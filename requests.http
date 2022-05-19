@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4MzE0MDl9.XMgFjB8ky0pMSxFRZUgrv2Ca9wf2gILAEkQYCpA5o-o
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTMwMDU3Mjd9.FpnRVfFR7Z1GRm1PTtcJbt6DqweXW57wBY4Kl6aPjSE
 
 
 
@@ -86,10 +86,17 @@ Authorization: Bearer {{jwt}}
 GET http://localhost:3000/suppliers.json
 
 
+
+### CartedProduct index
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+
+
+
 ### CartedProduct create
-POST http://localhost:3000/carted_products/
+POST http://localhost:3000/carted_products.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTMwMDQ2MDN9.T4QpIuC4T3rFFGvTr0XUR_TdqcrtVwOQYtNXRX0FKEc
+Authorization: Bearer {{jwt}}
 
 {
   "product_id": 3,
