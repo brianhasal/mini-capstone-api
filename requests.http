@@ -1,9 +1,11 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTMwMDU3Mjd9.FpnRVfFR7Z1GRm1PTtcJbt6DqweXW57wBY4Kl6aPjSE
+@host = http://localhost:3000
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzMzU2MTB9.jMzOPZLaIgjvCWLZjh6QC6lcw7x7o0uFGH70lFIV1mw
 
 
 
 ### Users create (signup)
-POST http://localhost:3000/users.json
+POST {{host}}/users.json
 Content-Type: application/json
 
 {
@@ -14,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions.json
+POST {{host}}/sessions.json
 Content-Type: application/json
 
 {
@@ -28,78 +30,101 @@ Content-Type: application/json
 
 # second = 
 
-### Orders index
-GET http://localhost:3000/orders.json
-Authorization: Bearer {{jwt}}
 
-
-### Orders create
-POST http://localhost:3000/orders.json
-Authorization: Bearer {{jwt}}
-Content-Type: application/json
-
-{
-  "product_id": 1,
-  "quantity": 2
-}
-
-### Orders show
-GET http://localhost:3000/orders/13.json
-Authorization: Bearer {{jwt}}
 
 
 ### Product index
-GET http://localhost:3000/products.json
+GET {{host}}/products.json
 
 ### Product create
-POST http://localhost:3000/products.json
-Authorization: Bearer {{jwt}}
+POST {{host}}/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
 
 {
-  "name": "product_test_name4",
-  "price": 11,
+  "name": "product_test_name1",
+  "price": 10,
   "description": "product_test_description",
   "supplier_id": 1
 }
 
-
 ### Product show
-GET http://localhost:3000/products/1.json
+GET {{host}}/products/1.json
 
 ### Product update
-PATCH http://localhost:3000/products/2.json
+PATCH {{host}}/products/5.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+
+{
+  "name": "Sample test",
+  "price": 20
+}
+
+### Product destroy
+DELETE {{host}}/products/5
+Authorization: Bearer {{jwt}}
+
+
+
+
+
+
+
+### Supplier index
+GET {{host}}/suppliers.json
+
+
+
+
+
+
+
+
+### Orders index
+GET {{host}}/orders.json
+Authorization: Bearer {{jwt}}
+
+
+### Orders create
+POST {{host}}/orders.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "Star Wars The Child Talking Plush Toy with Character Sounds and Accessories, The Mandalorian Toy",
-  "price": 21
+  "product_id": 2,
+  "quantity": 4,
+  "subtotal": 100,
+  "tax": 10,
+  "total": 110
 }
 
-### Product destroy
-DELETE http://localhost:3000/products/2
+### Orders show
+GET {{host}}/orders/1.json
 Authorization: Bearer {{jwt}}
 
 
-### Supplier index
-GET http://localhost:3000/suppliers.json
+
+
+
 
 
 
 ### CartedProduct index
-GET http://localhost:3000/carted_products.json
+GET {{host}}/carted_products.json
 Authorization: Bearer {{jwt}}
 
-
-
 ### CartedProduct create
-POST http://localhost:3000/carted_products.json
+POST {{host}}/carted_products.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
   "product_id": 3,
-  "quantity": 3,
-  "status": "purchased"
+  "quantity": 15
 }
+
+### Carted destroy
+DELETE {{host}}/carted_products/14.json
