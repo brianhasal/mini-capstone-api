@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     )
     if @product.save
       Image.create(product_id: @product.id, url: params[:url])
-      render template: "products/show"
+      render template: "products/index"
     else
       render json: { errors: @product.errors.full_messages}, status: :unprocessable_entity
     end
