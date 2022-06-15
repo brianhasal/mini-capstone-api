@@ -21,34 +21,42 @@
 ### IS THE OLD WAY... Product.create(...) combines the functions of Product.new(...) & Product.save
 ### This practice streamlines code
 
+############### USER SEEDS #################
+#vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv#
+
+user = User.create!(
+  "name": "admin",
+  "email": "admin@test.com",
+  "password": "password"
+)
 
 
 ############### SUPPLIER SEEDS #################
 #vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv#
 
-# supplier = Supplier.create(
-#   "name": "Marvel, Disney",
-#   "email": "support@marvel.com",
-#   "phone_number": "800-SPD-RMAN"
-# )
+supplier = Supplier.create(
+  "name": "Marvel, Disney",
+  "email": "support@marvel.com",
+  "phone_number": "800-SPD-RMAN"
+)
 
-# supplier = Supplier.create(
-#   "name": "Konami",
-#   "email": "support@konami.com",
-#   "phone_number": "800-YUG-IOHH"
-# )
+supplier = Supplier.create(
+  "name": "Konami",
+  "email": "support@konami.com",
+  "phone_number": "800-YUG-IOHH"
+)
 
-# supplier = Supplier.create(
-#   "name": "Kenner",
-#   "email": "support@kenner.com",
-#   "phone_number": "800-STR-WARS"
-# )
+supplier = Supplier.create(
+  "name": "Kenner",
+  "email": "support@kenner.com",
+  "phone_number": "800-STR-WARS"
+)
 
-# supplier = Supplier.create(
-#   "name": "Studio Ghibli",
-#   "email": "support@ghibli.com",
-#   "phone_number": "800-MIYAZAKI"
-# )
+supplier = Supplier.create(
+  "name": "Studio Ghibli",
+  "email": "support@ghibli.com",
+  "phone_number": "800-MIYAZAKI"
+)
 
 
 ################THEN SWITCH#################

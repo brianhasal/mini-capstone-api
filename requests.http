@@ -1,6 +1,6 @@
 @host = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzMzU2MTB9.jMzOPZLaIgjvCWLZjh6QC6lcw7x7o0uFGH70lFIV1mw
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzMzkyNTV9.M3CAQLGpqrmY3ZyotBLcAL9_Bgk4KUF2MxSjklc_Ymo
 
 
 
@@ -50,10 +50,10 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Product show
-GET {{host}}/products/1.json
+GET {{host}}/products/4.json
 
 ### Product update
-PATCH {{host}}/products/5.json
+PATCH {{host}}/products/4.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -64,7 +64,7 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Product destroy
-DELETE {{host}}/products/5
+DELETE {{host}}/products/4
 Authorization: Bearer {{jwt}}
 
 
