@@ -1,6 +1,6 @@
 @host = http://localhost:3000
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzMzkyNTV9.M3CAQLGpqrmY3ZyotBLcAL9_Bgk4KUF2MxSjklc_Ymo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTUzNDQ5Nzl9.3k6-sDLEO5r5vqQc7IRyfSeI9HgXwYy6bTKqMAHLkog
 
 
 
