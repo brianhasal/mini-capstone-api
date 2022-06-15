@@ -36,5 +36,13 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
+
+  def primary_image
+    if images[0]
+      images[0].url
+    else
+      "https://www.flexx.co/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
+    end
+  end
   
 end
